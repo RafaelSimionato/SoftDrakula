@@ -1,0 +1,21 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');*/
+
+body {
+    background-color: rgb(50, 50, 50); /* Dark background color (RGB 50, 50, 50) */
+    color: #ffffff; /* Light text color */
+  }
+  
+  h1 {
+    color: #ffffff; /* Orange title color */
+  }
+  
+  h2 {
+    color: #ffffff; /* Neon green subtitle color */
+  }
+  
+  /* Style for the title that glows on hover */
+  h2:hover, h3:hover {
+    color: #ff6600; /* Orange title color on hover */
+    text-shadow: 2px 2px 5px #ffffff; /* Glow effect on hover */
+  }
+  

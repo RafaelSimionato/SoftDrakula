@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+/* Global styles */
+body {
+    background-color: rgb(50, 50, 50);
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    font-family: 'Orbitron', sans-serif;
+}
+
+body, h1, h2 {
+    margin: 0;
+    padding: 0;
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Center the entire content vertically and horizontally */
+.custom-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    max-width: 800px;
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px; /* Add padding to the container */
+}
+
+/* Styles for the title container */
+.title-container {
+    position: relative;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 40px; /* Add margin below the title container */
+}
+
+.title-container h1 {
+    font-size: 4em; /* Increased font size for prominence */
+    text-shadow: 2px 2px 2px #f7f7f7; /* Add text-shadow for better visibility */
+    color: #ffffff; /* Ensure the title is white */
+}
+
+.title-container h1 span {
+    display: inline-block;
+    opacity: 0; /* Initially invisible */
+    transform: translateX(-50px); /* Slightly shifted left */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transition for opacity and transform */
+}
+
+.title-container h1 span.orange-letter {
+    color: #ff6600; /* Orange color for the "D" */
+}
+
+/* CSS for &copy; symbol */
+.title-container h1 span.small-copy {
+    font-size: 0.3em; /* Adjust the font size */
+    -ms-text-combine-horizontal: bottom; /* Align with the rest of the text */
+}
+
+
+.typing-animation {
+    animation: typeLetter 0.5s forwards; /* Animation for typing each letter */
+}
+
+@keyframes typeLetter {
+    from {
+        opacity: 0; /* Start with opacity 0 */
+        transform: translateX(-50px); /* Start slightly shifted left */
+    }
+    to {
+        opacity: 1; /* End with opacity 1 */
+        transform: translateX(0); /* End with no shift */
+    }
+}
+
+.title-container h1 span:last-child {
+    transition-delay: 0.5s; /* Delay for the last letter */
+}
+
+@keyframes slideFromBottom {
+    0% {
+        transform: translateY(100vh) scale(0.5); /* Start from bottom and zoomed out */
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(20vh) scale(1.5); /* Move to the middle of the screen and zoom in */
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0) scale(1); /* End up in the final position */
+        opacity: 1;
+    }
+}
+
+.title-container h2 {
+    color: #ffffff; /* Ensure it's white */
+    font-size: 1.7em; /* Adjust font size if necessary */
+    text-shadow: 2px 2px 2px #ffffff; /* Add text-shadow for better visibility */
+    animation: slideFromBottom 3s ease forwards; /* Apply the animation */
+    position: relative;
+    margin-top: 20px; /* Add margin to the top to create space between h1 and h2 */
+    
+}
+
+/* Style for the navigation menu */
+.custom-nav {
+    background-color: #222222;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    text-align: center; /* Center the content horizontally */
+    margin-top: 40px; /* Add margin above the navigation menu */
+    margin-bottom: 40px; /* Add margin below the navigation menu */
+}
+
+.custom-menu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row; /* Change flex direction to row */
+    align-items: center;
+    justify-content: center; /* Center the items horizontally */
+    width: 100%; /* Ensure it occupies the full width */
+}
+
+.custom-menu li {
+    margin: 10px; /* Add margin to separate items */
+}
+
+.custom-menu li a {
+    position: relative;
+    display: inline-block;
+    padding: 15px 40px;
+    border-radius: 10px; /* Rounded button shape */
+    font-weight: bold;
+    background: linear-gradient(to bottom, #f0f0f0, #c0c0c0); /* Chrome-like gradient */
+    color: #222222; /* Dark color for text */
+    text-decoration: none;
+    overflow: hidden;
+    transition: transform 0.2s, background-color 0.2s, color 0.2s, box-shadow 0.2s; /* Smooth transitions */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.custom-menu li a:hover {
+    background: linear-gradient(to bottom, #c0c0c0, #f0f0f0); /* Darker gradient on hover */
+    color: #222222; /* Dark color for text */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.custom-menu li a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s;
+}
+
+.custom-menu li a:hover::before {
+    transform: scaleX(1);
+    transform-origin: right;
+}
+
+/* Styles for the content sections */
+.custom-content {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 40px; /* Add margin to the top to create space above the content */
+}
+
+.custom-content h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: #c0c0c0; /* Color for all letters except 'D' */
+}
+
+.custom-content h1 span {
+    color: #ff6600; /* Color for 'D' */
+}
+
+.custom-content h2 {
+    font-size: 2em;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px #ff6600;
+}
+
+/* General link styles to remove default underline and color */
+.custom-content a {
+    text-decoration: none;
+    color: inherit; /* Inherit the color from the parent element */
+}
+
+/* Specific styles for custom content links */
+.custom-content h1 a {
+    color: #ffffff; /* Ensure the title is white */
+    text-shadow: 2px 2px 2px #f7f7f7; /* Add text-shadow for better visibility */
+}
+
+.custom-content h1 a:hover {
+    color: #ff6600; /* Change color on hover if needed */
+}
+
+.tagline {
+    font-size: 1.5em;
+    opacity: 0;
+    animation: moveSubtitle 10s ease forwards;
+    color: #ffffff;
+}
+
+@keyframes moveSubtitle {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+}
+
+footer p {
+    color: #ffffff;
+}
+
+footer p .small-copy {
+    font-size: 0.8em; /* Smaller font size for the copy symbol */
+    vertical-align: middle; /* Align vertically with the rest of the text */
+}
+
+.custom-content:hover {
+    background-color: #ff6600;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.custom-container .custom-menu,
+.custom-container .custom-menu2 {
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+}
+
+.custom-container .custom-menu li,
+.custom-container .custom-menu2 li {
+    list-style: none;
+    margin: 0 10px;
+}
